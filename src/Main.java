@@ -21,6 +21,7 @@ public class Main {
         System.out.println("###################\n");
 
         //### Functional Interfaces ###
+        //Las interfaces funcionales tienen un único método abstracto. Se le añade @FunctionalInterface a la interfaz
         //Default Method
         System.out.println("### Functional Interfaces ###");
         IUtils utils=new Utils();
