@@ -34,6 +34,9 @@ public class Main {
         //La operación se realiza sobre el único método abstract que tiene esta interfaz
         //La parte izquierda son los parámetros de ese método y la derecha su implementación (LambdaParameters -> LambdaBody)
         System.out.println("### Lambda ###");
+
+        IUtils util = (texto) -> System.out.println(texto);
+        util.print("Hola mundo, soy lambda");
         
         System.out.println("Suma con Lambda: "+calculadora().suma(2, 3));
         //Ordenación de nombres según su longitud
