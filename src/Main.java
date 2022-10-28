@@ -66,23 +66,31 @@ public class Main {
         System.out.println("\n");
 
         //JAVA Util Funtions
-        //Function <Persona, String> nombre = per -> per.getNombre(); Le las la persona, devuelve un string
+        //Function <Persona, String> nombre = per -> per.getNombre(); Le las la persona, devuelve un string. Se utiliza como nombre.apply(person);
         //andThen: nombre=nombre.andThen(it ->it.toUpperCase());
+        //BiFunction<T,U,R> : f(t,u) -> r (Parámetros y resultado, todos distintos entre si) 
+
+        //Predicate<T> (El resultado de evaluar un objeto, que retorna un booleano): Predicate<String> cadenaCorta = it -> it.length<10;  Para aplicarlo se hace luego cadenaCorta.test(cadena);
+        //BiPredicate<T,U> (Lo mismo pero con dos parametros de entrada) : f(t,u) -> boolean
+
         //Unary (IntUnaryOperator, LongUnaryOperator, DoubleUnaryOperator) para los tipos primitivos
         //Interface Function <T,R>
         //f(primitivo)->R : IntFunction<R>
         //f(T)->primitivo : ToLongFunction<T>
         //f(primitivo)->primitivo : DoubleToIntFunction
-        //Consumer<T> (Acepta un parametro, pero no produce resultado): Consumer<String> impresor = (it) -> {System.oyt.println(it);} 
-        //Supplier<T> (Operación sin ningún parámetro, que produce un valor): 
-        //Random random= new Random();
-        //Supplier<Integer> generador = () -> random.nextInt();
-        //Predicate<T> (El resultado de evaluar un objeto, es un valor cierto o falso): Predicate<String> cadenaCorta = it -> it.length<10;
+
         //El prefijo Binary es para cuando se duplica el número de parámetros:
         //BinaryOperator<T> : f(t,t) -> t (Dos parámetros, que devuelve un tipo igual que los parámetros)
-        //BiFunction<T,U,R> : f(t,u) -> r (Parámetros y resultado, todos distintos entre si)
-        //BiPredicate<T,U> : f(t,u) -> boolean
-        //Ej: DoubleBinaryOperator
+        
+        //Consumer<T> (Acepta un parametro, pero no produce resultado): Consumer<String> impresor = (it) -> {System.oyt.println(it); impresor.accept("prueba");} 
+        //BiConsumer<T,U> (Lo mismo, pero aceptando dos parámetros)
+
+        //Supplier<T> (Operación sin ningún parámetro, que produce un valor): 
+        //Random random= new Random();
+        //Supplier<Integer> generador = () -> random.nextInt(); generador.get();
+
+
+        
         System.out.println("### JAVA Util Funtions ###");
         IntUnaryOperator cuadrado = a -> a * a;
         System.out.println("El cuadrado de 2 es: "+cuadrado.applyAsInt(2));
